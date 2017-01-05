@@ -18,17 +18,23 @@ class CreateTaskViewController: UIViewController {
         // create a task from the outlet infromation
         // add new task to array in previous ViewController
         
-        let task = Task()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let task = Task(context: context)
+        
         task.name = taskNameTextField.text! // optional ! 를 붙여서 이 자리에 무조건 text가 있을 것이라고 확신.
         task.important = importantSwitch.isOn // on인지 off인지 알려주는게 isOn
         
-        previousVC.tasks.append(task) // 이 코드를 통해서 기존 previousVC에다가 task를 '추가'(append)함.
-        previousVC.tableView.reloadData() // 위에서 append 한 다음에 reload를 해줘야 TVC에서 값이 업데이트 됨
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        // coredata 적용후 삭제 > previousVC.tasks.append(task) // 이 코드를 통해서 기존 previousVC에다가 task를 '추가'(append)함.
+        // coredata 적용후 삭제 > previousVC.tableView.reloadData() // 위에서 append 한 다음에 reload를 해줘야 TVC에서 값이 업데이트 됨
+        // pop back
         navigationController!.popViewController(animated: true)
         
     }
     
-    var previousVC = TasksViewController() // TVC에서 온 값을 previousVC에 덮어씌움
+    // coredata 적용 후 삭제 var previousVC = TasksViewController() // TVC에서 온 값을 previousVC에 덮어씌움
     
     
     override func viewDidLoad() {

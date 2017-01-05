@@ -179,40 +179,5 @@
             </objects>
             <point key="canvasLocation" x="246" y="38"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sz9-2M-I1I">
-            <objects>
-                <viewController id="F8V-nL-WWt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Ta-j0-gQo"/>
-                        <viewControllerLayoutGuide type="bottom" id="Y6s-Um-Bik"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jDa-KA-WHz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Lm-M3-eM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="175" y="758"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="a5n-kP-V8f">
-            <objects>
-                <viewController id="X54-9R-xPL" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="72o-Gz-zZb"/>
-                        <viewControllerLayoutGuide type="bottom" id="U5q-Yk-cj5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YKC-34-hrP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="me4-J3-qSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
 </document>

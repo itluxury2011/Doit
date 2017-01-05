@@ -13,24 +13,25 @@ class CompleteTaskViewController: UIViewController {
     @IBOutlet weak var taskLabel: UILabel!
     
     @IBAction func completeTapped(_ sender: Any) {
-        
-        previousVC.tasks.remove(at: previousVC.selectedIndex)
-        previousVC.tableView.reloadData() // 위에서 append 한 다음에 reload를 해줘야 TVC에서 값이 업데이트 됨
         navigationController!.popViewController(animated: true)
         
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(task!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    var task = Task()
-    var previousVC = TasksViewController()
+    var task: Task? = nil //
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if task.important {
-            taskLabel.text = "❗️\(task.name)"
+        if task!.important {
+            taskLabel.text = "❗️\(task!.name!)"
         } else {
-            taskLabel.text = task.name // 때려넣을 때 name을 때려넣음
+            taskLabel.text = task!.name! // 때려넣을 때 name을 때려넣음
         }
 
         // Do any additional setup after loading the view.
